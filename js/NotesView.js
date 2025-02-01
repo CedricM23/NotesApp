@@ -11,10 +11,12 @@ export default class NotesView {
                 <div class="notes__list"></div>
             </div>
             <div class="notes__preview">
-                <input class="notes__title" type="text" placeholder="New Note...">
-                <textarea class="notes__body">Take Note...</textarea>
+                <input class="notes__title" type="text" placeholder="New Note">
+                <textarea class="notes__body" placeholder="Take a new note..."></textarea>
             </div>
         `;
+
+        let number = 0;
 
         const btnAddNote = this.root.querySelector(".notes__add");
         const inpTitle = this.root.querySelector(".notes__title");
