@@ -1,5 +1,5 @@
 export default class NotesView {
-    constructor(root, { onNoteSelect, onNoteAdd, onNoteEdit, onNoteDelete } = {}) {
+    constructor(root, { onNoteSelect, onNoteAdd, onNoteEdit, onNoteDelete} = {}) {
         this.root = root;
         this.onNoteSelect = onNoteSelect;
         this.onNoteAdd = onNoteAdd;
@@ -8,6 +8,7 @@ export default class NotesView {
         this.root.innerHTML = `
             <div class="notes__sidebar">
                 <button class="notes__add" type="button">Add Note</button>
+                <p id="demo"></p>
                 <div class="notes__list"></div>
             </div>
             <div class="notes__preview">
@@ -15,9 +16,6 @@ export default class NotesView {
                 <textarea class="notes__body" placeholder="Take a new note..."></textarea>
             </div>
         `;
-
-        let number = 0;
-
         const btnAddNote = this.root.querySelector(".notes__add");
         const inpTitle = this.root.querySelector(".notes__title");
         const inpBody = this.root.querySelector(".notes__body");
@@ -37,6 +35,7 @@ export default class NotesView {
 
         this.updateNotePreviewVisibility(false);
     }
+
 
     _createListItemHTML(id, title, body, updated) {
         const MAX_BODY_LENGTH = 60;
